@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default" namespace="/" extends="struts-default">
+
+        <interceptors>
+            <interceptor name="authority" class="interceptor.MyInterceptor">
+            </interceptor>
+            <interceptor-stack name="myInterceptor">
+                <interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="authority"/>
+            </interceptor-stack>
+        </interceptors>
+
+        <action name="login" class="action.LoginAction" method="execute">
+            <result name="success">/JSP/welcome.jsp</result>
+            <result name="login">/JSP/login.jsp</result>
+            <interceptor-ref name="myInterceptor"/>
+        </action>
+
+        <action name="register" class="action.RegisterAction" method="execute">
+            <result name="success">/JSP/user_info.jsp</result>
+        </action>
+
+        <action name="convert" class="action.StudentAction" >
+            <result name="success">/JSP/output.jsp</result>
+            <result name="input">/JSP/input.jsp</result>
+        </action>
+    </package>
+
+
+
+</struts>

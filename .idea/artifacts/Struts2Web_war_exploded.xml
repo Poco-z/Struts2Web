@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Struts2Web:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Struts2Web_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Struts2Web/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Struts2Web" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="asm-5.2" />
+          <element id="library" level="project" name="woodstox-core-5.0.3" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
